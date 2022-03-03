@@ -1,0 +1,34 @@
+
+DROP DATABASE IF EXISTS foro;
+CREATE DATABASE foro;
+USE foro;
+
+CREATE TABLE tb_usuarios (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  username VARCHAR(50) NOT NULL,
+  passwd VARCHAR(50) NOT NULL,
+  rol BOOLEAN,
+  descripcion LONGTEXT,
+  foto LONGTEXT,
+);
+
+CREATE TABLE tb_post(
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  data TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  titulo VARCHAR(100) NOT NULL,
+  post LONGTEXT NOT NULL,
+  visitas INT,
+  likes INT,
+  dislikes INT
+);
+
+CREATE TABLE tb_comentario(
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  comentario LONGTEXT,
+  id_post INT
+);
+
+CREATE TABLE tb_categorias(
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  categoria LONGTEXT,
+);
