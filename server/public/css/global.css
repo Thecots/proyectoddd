@@ -52,6 +52,8 @@ main{
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  background: white;
+  z-index: -5;
 }
 
 section.banner{
@@ -66,14 +68,17 @@ section.banner{
 
 section.banner img{
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
+  filter: grayscale(0.4);
+  
 }
 
 section.banner h1, section.banner a{
+  z-index: 5;
   margin-left: 50px;
   color: white;
   font-weight: 800;
@@ -97,10 +102,9 @@ section.noticias{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   grid-template-rows: repeat(auto-fit, 150px);
-
   background: white;
-  min-height: 800px;
   gap:10px;
+  margin-bottom: 50px;
 }
 
 
@@ -134,3 +138,60 @@ section.noticias div article p{
 section.noticias div article a{
   font-size: 16px;
 }
+
+main span{
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  background-color: rgb(20, 20, 20);
+  padding: 5px;
+  border-radius: 4px;
+  margin-top: 15px;
+  margin: 15px 15px 0 15px;
+}
+
+section.top10{
+  margin-top: 20px;
+  padding: 15px;
+}
+
+/* tabla */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table td{
+  color: white;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr{
+  background: rgb(26, 26, 26);
+}
+tr:nth-child(even){
+  background: rgb(54, 54, 54);
+
+}
+
+th {
+  font-size: 14px;
+  color: rgb(151, 151, 151);
+}
+
+table img{
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+table tbody tr td:nth-child(2){
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
